@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Bleach !</title>
+    <script src="Mission8.js"></script>
+    <link rel="stylesheet" href="mission8.css">
+    </head>
+<body>
+
+    <header>
+        <h1>Quiz sur l'univers de Bleach</h1>
+    </header>
+
+    <main>
+        <form id="qcm-form">
+            
+         <div class="question-block" bonne-rep="r1_c">
+                <h3>1. Quel est le nom de l'épée spirituelle (Zanpakuto) d'Ichigo Kurosaki dans sa forme Shikai initiale ?</h3>
+                <label><input type="checkbox" name="q1" value="r1_a"> Senbonzakura</label><br>
+                <label><input type="checkbox" name="q1" value="r1_b"> Hyorinmaru</label><br>
+                <label><input type="checkbox" name="q1" value="r1_c"> Zangetsu</label><br>
+         </div>
+         <div class="question-block" bonne-rep="r2_a">
+                <h3>2. Quel groupe constitue la force militaire principale de la Soul Society ?</h3>
+                <label><input type="checkbox" name="q2" value="r2_a"> Shinigami</label><br>
+                <label><input type="checkbox" name="q2" value="r2_b"> Bounts</label><br>
+                <label><input type="checkbox" name="q2" value="r2_c"> Quincy</label><br>
+                <label><input type="checkbox" name="q2" value="r2_d"> Fullbringers</label><br>
+         </div>
+            <div class="question-block" bonne-rep="r3_a">
+                <h3>3. Comment appelle-t-on la libération finale et la plus puissante d'un Zanpakuto ?</h3>
+                <label><input type="checkbox" name="q3" value="r3_a"> Bankai</label><br>
+                <label><input type="checkbox" name="q3" value="r3_b"> Shikai</label><br>
+                <label><input type="checkbox" name="q3" value="r3_c"> Resurrección</label><br>
+         </div>
+            <div class="question-block" bonne-rep="r4_a">
+                <h3>4. Lequel de ces personnages est un Capitaine du Gotei 13 ?</h3>
+                <label><input type="checkbox" name="q4" value="r4_a"> Byakuya Kuchiki</label><br>
+                <label><input type="checkbox" name="q4" value="r4_b"> Kon</label><br>
+                <label><input type="checkbox" name="q4" value="r4_c"> Tatsuki Arisawa</label><br>
+                <label><input type="checkbox" name="q4" value="r4_d"> Pesche Guiche</label><br>
+         </div>
+            <div class="question-block" bonne-rep="r5_c">
+                <h3>5. Où se trouve le Hueco Mundo ?</h3>
+                <label><input type="checkbox" name="q5" value="r5_a"> Un quartier résidentiel de Karakura</label><br>
+                <label><input type="checkbox" name="q5" value="r5_b"> La dimension des Dieux de la Mort</label><br>
+                <label><input type="checkbox" name="q5" value="r5_c"> Le monde des Hollows</label><br>
+         </div>
+            <div class="question-block" bonne-rep="r6_a">
+                <h3>6. Qui est le principal antagoniste de l'arc Arrancar ?</h3>
+                <label><input type="checkbox" name="q6" value="r6_a"> Aizen Sōsuke</label><br>
+                <label><input type="checkbox" name="q6" value="r6_b"> Yhwach</label><br>
+                <label><input type="checkbox" name="q6" value="r6_c"> Gin Ichimaru</label><br>
+                <label><input type="checkbox" name="q6" value="r6_d"> Kenpachi Zaraki</label><br>
+            </div>
+            <div class="question-block" bonne-rep="r7_b">
+                <h3>7. Quel Capitaine est connu pour son Bankai qui crée un Geant immense ?</h3>
+                <label><input type="checkbox" name="q7" value="r7_a"> Shunsui Kyōraku</label><br>
+                <label><input type="checkbox" name="q7" value="r7_b"> Sajin Komamura</label><br>
+                <label><input type="checkbox" name="q7" value="r7_c"> Jūshirō Ukitake</label><br>
+            </div>
+            <div class="question-block" bonne-rep="r8_b">
+                <h3>8. Quelle technique utilise Uryu Ishida, le Quincy ?</h3>
+                <label><input type="checkbox" name="q8" value="r8_a"> Getsuga Tenshō</label><br>
+                <label><input type="checkbox" name="q8" value="r8_b"> Le Ginto</label><br>
+                <label><input type="checkbox" name="q8" value="r8_c"> Le Bakudo</label><br>
+                <label><input type="checkbox" name="q8" value="r8_d"> Le Hado</label><br>
+            </div>
+            <div class="question-block" bonne-rep="r9_a">
+                <h3>9. Quel Arrancar porte le numéro 4 dans l'Espada sous Aizen ?</h3>
+                <label><input type="checkbox" name="q9" value="r9_a"> Ulquiorra Cifer</label><br>
+                <label><input type="checkbox" name="q9" value="r9_b"> Grimmjow Jaegerjaquez</label><br>
+                <label><input type="checkbox" name="q9" value="r9_c"> Coyote Starrk</label><br>
+            </div>
+            <div class="question-block" bonne-rep="r10_c">
+                <h3>10. Quel rang est immédiatement inférieur à Capitaine au sein du Gotei 13 ?</h3>
+                <label><input type="checkbox" name="q10" value="r10_a"> Troisième siège</label><br>
+                <label><input type="checkbox" name="q10" value="r10_b"> Kurosaki</label><br>
+                <label><input type="checkbox" name="q10" value="r10_c"> Lieutenant</label><br>
+            </div>
+            <div id="results"></div>
+            <br><br>
+
+
+
+            <div class="button-group">
+    <button type="button" id="score-btn" onclick="calculerScore()">Score</button>
+    <button type="button" id="corrigé-btn" onclick="afficherCorrige()">Corrigé</button>
+    <button type="button" id="effacer-btn" onclick="effacerSelections()">Effacer</button>
+</div>
+            </div>
+            
+        </form>
+    </main>
+
+    <footer>
+        <script src="script.js"></script>
+    </footer>
+</body>
+</html>
