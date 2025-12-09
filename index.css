@@ -1,0 +1,153 @@
+/* -------- RESET -------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Consolas, "Courier New", monospace;
+}
+
+/* -------- GLOBAL & VIDEO DE FOND -------- */
+body {
+    background: #0a0f1f; /* Fallback si la vidéo ne charge pas */
+    color: #ccd6f6;
+    line-height: 1.6;
+    padding: 25px;
+    position: relative; /* Base pour la superposition */
+    z-index: 1; /* Le contenu est au-dessus de la vidéo */
+}
+
+#video-background {
+    position: fixed; /* Reste fixe lors du défilement */
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -10; /* Le mettre derrière TOUT le contenu */
+    object-fit: cover; /* Assure que la vidéo couvre l'écran sans déformation */
+    filter: brightness(60%); /* Optionnel : Assombrir la vidéo pour augmenter le contraste */
+}
+
+/* -------- HEADER -------- */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    
+    background: transparent; /* Rendu transparent pour voir la vidéo */
+    backdrop-filter: blur(5px); /* Ajoute un flou sur les éléments derrière (la vidéo) */
+
+    border: 1px solid #1f4068;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #1f406880;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: #66fcf1;
+    text-shadow: 0 0 8px #45a29e;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #c5c6c7;
+}
+
+/* -------- SECTIONS -------- */
+section {
+    background: transparent; /* Rendu transparent pour voir la vidéo */
+    backdrop-filter: blur(5px); /* Ajoute un flou sur les éléments derrière (la vidéo) */
+
+    border: 1px solid #23395d;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 35px;
+    box-shadow: 0 0 20px #0b151f;
+}
+
+/* -------- TITRES -------- */
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #66fcf1;
+    text-shadow: 0 0 6px #45a29e;
+}
+
+section h3 {
+    margin-top: 25px;
+    font-size: 1.4rem;
+    color: #4dd0e1;
+    text-shadow: 0 0 6px #23a8b0;
+}
+
+/* -------- LISTES -------- */
+ul {
+    list-style: none;
+    margin-top: 15px;
+    display: grid;
+    /* Crée une grille de colonnes auto-ajustables (min 180px) */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+    gap: 12px;
+}
+
+/* -------- LINKS (boutons cybers transparents) -------- */
+ul li a {
+    display: block;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: #66fcf1;
+    font-weight: bold;
+
+    border: 1px solid #45a29e;
+    border-radius: 8px;
+
+    /* LE FOND DOIT ÊTRE TRANSPARENT MAINTENANT */
+    background: transparent; 
+
+    transition: 0.25s ease-in-out;
+    box-shadow: 0 0 10px #1f406840;
+}
+
+/* Effet néon au survol (devient opaque et lumineux) */
+ul li a:hover {
+    background: #0b1f2e; /* Devient opaque au survol pour un effet de mise au point */
+    border-color: #66fcf1;
+    color: white;
+    box-shadow: 0 0 12px #66fcf1, 0 0 20px #45a29e;
+    transform: translateY(-3px);
+}
+
+/* -------- STYLE DES PDF (autre couleur) -------- */
+section h3 + ul li a {
+    border-color: #9f7aea;
+    color: #d6b6ff;
+    background: transparent; /* Reste transparent */
+}
+
+section h3 + ul li a:hover {
+    box-shadow: 0 0 12px #b19cd9, 0 0 20px #9f7aea;
+    background: #1a1035; /* Devient opaque violet au survol */
+    border-color: #d6b6ff;
+}
+
+/* -------- FOOTER -------- */
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+    border-top: 1px solid #23395d;
+}
+
+/* -------- RESPONSIVE -------- */
+@media(max-width: 600px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    /* Les listes passent en colonne unique sur petit écran */
+    ul {
+        grid-template-columns: 1fr; 
+    }
+}
